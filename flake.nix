@@ -5,14 +5,24 @@
     lean = {
       url = github:leanprover/lean4;
     };
-    nixpkgs.url = github:nixos/nixpkgs/nixos-21.05;
+    LSpec = {
+      # url = github:yatima-inc/LSpec;
+      url = github:anderssorby/LSpec/acs/add-flake;
+      inputs.lean.follows = "lean";
+    };
+    YatimaStdLib = {
+      # url = github:yatima-inc/YatimaStdLib.lean;
+      url = github:anderssorby/YatimaStdLib.lean/acs/add-flake;
+      inputs.lean.follows = "lean";
+    };
+    nixpkgs.url = github:nixos/nixpkgs/nixos-22.05;
     utils = {
       url = github:yatima-inc/nix-utils;
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, lean, utils, nixpkgs }:
+  outputs = { self, lean, utils, nixpkgs, ... } @ inputs:
     let
       supportedSystems = [
         "aarch64-linux"
@@ -30,6 +40,10 @@
         name = "Ipld";  # must match the name of the top-level .lean file
         project = leanPkgs.buildLeanPackage {
           inherit name;
+          deps = with inputs; [
+            LSpec.project.${system}
+            YatimaStdLib.project.${system}
+          ];
           # Where the lean files are located
           src = ./.;
         };
