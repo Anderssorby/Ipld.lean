@@ -1,34 +1,34 @@
-constant base2Table: String := 
+def base2Table: String := 
   "01"
-constant base8Table: String := 
+def base8Table: String := 
   "01234567"
-constant base10Table: String := 
+def base10Table: String := 
   "0123456789"
-constant base16Table: String := 
+def base16Table: String := 
   "0123456789abcdef"
-constant base16upperTable: String := 
+def base16upperTable: String := 
   "0123456789ABCDEF"
-constant base32Table: String := 
+def base32Table: String := 
   "abcdefghijklmnopqrstuvwxyz234567"
-constant base32upperTable: String := 
+def base32upperTable: String := 
   "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567"
-constant base32hexTable: String := 
+def base32hexTable: String := 
   "0123456789abcdefghijklmnopqrstuv"
-constant base32hexupperTable: String := 
+def base32hexupperTable: String := 
   "0123456789ABCDEFGHIJKLMNOPQRSTUV"
-constant base32zTable: String := 
+def base32zTable: String := 
   "ybndrfg8ejkmcpqxot1uwisza345h769"
-constant base36Table: String := 
+def base36Table: String := 
   "0123456789abcdefghijklmnopqrstuvwxyz"
-constant base36upperTable: String := 
+def base36upperTable: String := 
   "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-constant base58flickrTable: String := 
+def base58flickrTable: String := 
   "123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ"
-constant base58btcTable: String :=  
+def base58btcTable: String :=  
   "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
-constant base64Table: String :=  
+def base64Table: String :=  
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
-constant base64urlTable: String :=  
+def base64urlTable: String :=  
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_"
 
 -- These functions should be generated from Lean macros

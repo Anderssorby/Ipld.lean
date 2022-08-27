@@ -1,6 +1,6 @@
 import Ipld.UnsignedVarInt
 import Ipld.Multibase
-import Ipld.Keccak
+-- import Ipld.Keccak
 
 instance : Repr ByteArray where
   reprPrec x prec := Repr.addAppParen ("ByteArray " ++ toString x.data) prec
@@ -29,10 +29,10 @@ def fromBytes (bytes : ByteArray) : Option Multihash :=
   if digest.size > size then none
   else some { code, size, digest }
 
-def sha3_256 (x: ByteArray) : Multihash :=
-  { code := 0x16, size := 32, digest := Keccak.sha3_256 x }
+-- def sha3_256 (x: ByteArray) : Multihash :=
+--   { code := 0x16, size := 32, digest := Keccak.sha3_256 x }
 
-def sha3_512 (x: ByteArray) : Multihash :=
-  { code := 0x14, size := 64, digest := Keccak.sha3_512 x }
+-- def sha3_512 (x: ByteArray) : Multihash :=
+--   { code := 0x14, size := 64, digest := Keccak.sha3_512 x }
 
 end Multihash
